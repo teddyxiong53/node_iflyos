@@ -15,6 +15,8 @@ let cfg = {
     clientId: "",
     clientSecret: "",
     deviceId: "",
+    bleName: "",
+    
 }
 
 
@@ -24,14 +26,14 @@ function onSystemReady() {
     console.log("system ready")
     let netMonitor = new EvsNetMonitor()
     let authMgr = new EvsAuthrizeMgr(cfg)
-    //焦点管理
+    //焦点管理，可以放后
     let audioMgr = new EvsAudioMgr()
-    //本地提示音播放
+    //本地提示音播放，暂时忽略，用打印替代
     let soundPlayer = new EvsSoundPlayer()
     //上下文管理器
     let ctxMgr = new EVsContextMgr()
-    let moduleStartup = new EvsModuleStartup()
-    let moduleConfig = new EvsModuleConfig()
+    let moduleStartup = new EvsModuleStartup(cfg, authMgr, netMonitor, soundPlayer)
+    let moduleConfig = new EvsModuleConfig()//网络配置模块
     let moduleInteraction = new EvsModuleInteraction()
 
     moduleStartup.start()

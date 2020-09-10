@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/teddyxiong53/node_iflyos/issues"
   },
-  "homepage": "https://github.com/teddyxiong53/node_iflyos#readme"
+  "homepage": "https://github.com/teddyxiong53/node_iflyos#readme",
+  "dependencies": {
+    "ble": "^1.0.1"
+  }
 }

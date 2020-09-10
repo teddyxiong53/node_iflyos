@@ -3,8 +3,10 @@ const log = console.log
 const EventEmitter = require('events')
 
 
-class EvsModuleConfig {
+class EvsModuleConfig extends EventEmitter{
     constructor() {
+        super()
+        this.networkMgr = new EvsNetworkMgr(cfg)
 
     }
 }
